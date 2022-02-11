@@ -32,6 +32,7 @@ export default function MovShoForm({
         <label>
           Type 
           <select required value={type} onChange={e => setType(e.target.value)}>
+            <option>select one</option>
             <option>Movie</option>
             <option>TV Show</option>
           </select>
