@@ -1,3 +1,63 @@
+body, html, #root, .App {
+  height: 100%;
+}
+
 .App {
   text-align: center;
+  background-image: linear-gradient(
+  45deg,
+  hsl(321deg 96% 79%) 0%,
+  hsl(314deg 83% 75%) 11%,
+  hsl(307deg 71% 70%) 22%,
+  hsl(298deg 64% 66%) 33%,
+  hsl(289deg 70% 65%) 44%,
+  hsl(280deg 76% 64%) 56%,
+  hsl(271deg 82% 64%) 67%,
+  hsl(260deg 88% 64%) 78%,
+  hsl(247deg 94% 64%) 89%,
+  hsl(222deg 100% 50%) 100%
+);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 150px;
+  padding-bottom: 10px;
+  background-color: white;
+}
+
+form label{
+  margin: 5px;
+}
+
+.single-movie-show {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.movie-show-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
