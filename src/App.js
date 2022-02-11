@@ -33,7 +33,7 @@ export default function App() {
   return (
     <Router>
       <div className='App'>
-        <header>
+        <header className='navlinks'>
           {
             currentUser &&
             <>
