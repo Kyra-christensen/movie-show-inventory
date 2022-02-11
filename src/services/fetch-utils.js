@@ -32,3 +32,10 @@ export async function getAllMovSho() {
     .select();
   return checkError(response);
 }
+
+export async function createMovSho(movSho){
+  const response = await client
+    .from('mov_sho_inventory')
+    .insert([movSho]);
+  return checkError(response);
+}
