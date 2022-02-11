@@ -9,7 +9,7 @@ export default function CreatePage() {
   const [genre, setGenre] = useState('');
   const [director, setDirector] = useState('');
   const [type, setType] = useState('');
-  const [yearReleased, setYearReleased] = useState(0);
+  const [yearReleased, setYearReleased] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
