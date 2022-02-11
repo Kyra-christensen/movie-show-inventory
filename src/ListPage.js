@@ -3,17 +3,21 @@ import { getAllMovSho } from './services/fetch-utils';
 import SingleMoSho from './SingleMoSho';
 
 export default function ListPage() {
-  const [movSho, setMovSho] = useState([]);
+  const [moviesShows, setMoviesShows] = useState([]);
 
   useEffect(() => {
     async function fetch() {
       const data = await getAllMovSho();
-      setMovSho(data);
+      setMoviesShows(data);
     }
     fetch();
   }, []);
 
   return (
-    <div>ListPage</div>
+    <div className="movie-show-list">
+      {
+        moviesShows.map((movieShow, i) => <SingleMoSho key={`${movieShow.title}=${i}`} movieShow={movieShow} />)
+      }
+    </div>
   );
 }
