@@ -15,6 +15,9 @@ export default function DetailPage() {
   }, [match]);
 
   return (
-    <div>DetailPage</div>
+    <div className='detail'>
+      <h3>{movieShow.title}</h3>
+      <p>Directed by {movieShow.director} is a {movieShow.type} released in {movieShow.year_released} that falls in the genre of {movieShow.genre}</p>
+    </div>
   );
 }
