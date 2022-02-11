@@ -14,7 +14,17 @@ import ListPage from './ListPage';
 import CreatePage from './CreatePage';
 import { logout } from './services/fetch-utils';
 
-function App() {
+export default function App() {
+  const [currentUser, setCurrentUser] = useState(localStorage.getItem('supabase.auth.token'));
+
+  useEffect(() => {
+    async function fetch() {
+      const user = getUser();
+      setCurrentUser(user);
+    }
+    fetch();
+  }, []);
+
   return (
     <div className="App">
       
