@@ -25,6 +25,11 @@ export default function App() {
     fetch();
   }, []);
 
+  async function handleLogout() {
+    await logout();
+    setCurrentUser('');
+  }
+
   return (
     <div className="App">
       
