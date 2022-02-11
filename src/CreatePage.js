@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createMovSho } from './services/fetch-utils';
 import { useHistory } from 'react-router-dom';
+import MovShoForm from './MovShoForm';
 
 export default function CreatePage() {
   const history = useHistory();
@@ -26,6 +27,20 @@ export default function CreatePage() {
   }
 
   return (
-    <div>CreatePage</div>
+    <div>
+      <MovShoForm
+        submitMovSho={handleSubmit}
+        title={title}
+        setTitle={setTitle}
+        genre={genre}
+        setGenre={setGenre}
+        director={director}
+        setDirector={setDirector}
+        type={type}
+        setType={setType}
+        yearReleased={yearReleased}
+        setYearReleased={setYearReleased} />
+
+    </div>
   );
 }
