@@ -6,7 +6,13 @@ export default function DetailPage() {
   const [movieShow, setMovieShow] = useState([]);
   const match = useRouteMatch();
 
-  
+  useEffect(() => {
+    async function fetch() {
+      const singleMovSho = await getSingleMovSho(match.user_id);
+      setMovieShow(singleMovSho);
+    }
+    fetch();
+  }, [match]);
 
   return (
     <div>DetailPage</div>
