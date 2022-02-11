@@ -43,6 +43,38 @@ export default function App() {
             </>
           }
         </header>
+        <main>
+          <Switch>
+            <Route exact path="/">
+              {
+                currentUser
+                  ? <Redirect to="/movies-shows" />
+                  : <AuthPage setCurrentUser={setCurrentUser} />
+              }
+            </Route>
+            <Route exact path="/movies-shows">
+              {
+                currentUser
+                  ? <ListPage />
+                  : <Redirect to="/" />
+              }
+            </Route>
+            <Route exact path="/movies-shows/:id">
+              {
+                currentUser
+                  ? <DetailPage />
+                  : <Redirect to="/" />
+              }
+            </Route>
+            <Route exact path="/create">
+              {
+                currentUser
+                  ? <CreatePage />
+                  : <Redirect to="/" />
+              }
+            </Route>
+          </Switch>
+        </main>
       </div>
     </Router>
   );
