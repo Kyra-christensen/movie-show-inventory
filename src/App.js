@@ -31,9 +31,20 @@ export default function App() {
   }
 
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+      <div className='App'>
+        <header>
+          {
+            currentUser &&
+            <>
+              <NavLink exact to="/movies-shows">List</NavLink>
+              <NavLink exact to="/create">Create</NavLink>
+              <button onClick={handleLogout}>Logout</button>
+            </>
+          }
+        </header>
+      </div>
+    </Router>
   );
 }
 
