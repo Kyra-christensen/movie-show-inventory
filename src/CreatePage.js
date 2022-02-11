@@ -9,7 +9,22 @@ export default function CreatePage() {
   const [director, setDirector] = useState('');
   const [type, setType] = useState('');
   const [yearReleased, setYearReleased] = useState(0);
-  
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const movSho = {
+      title,
+      genre,
+      director,
+      type,
+      year_released: yearReleased
+    };
+
+    await createMovSho(movSho);
+    history.push('/movies-shows');
+  }
+
   return (
     <div>CreatePage</div>
   );

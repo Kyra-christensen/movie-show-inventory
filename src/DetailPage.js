@@ -8,7 +8,7 @@ export default function DetailPage() {
 
   useEffect(() => {
     async function fetch() {
-      const singleMovSho = await getSingleMovSho(match.user_id);
+      const singleMovSho = await getSingleMovSho(match.params.id);
       setMovieShow(singleMovSho);
     }
     fetch();
