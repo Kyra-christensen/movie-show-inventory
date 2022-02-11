@@ -33,9 +33,18 @@ export async function getAllMovSho() {
   return checkError(response);
 }
 
-export async function createMovSho(movSho){
+export async function createMovSho(movSho) {
   const response = await client
     .from('mov_sho_inventory')
     .insert([movSho]);
+  return checkError(response);
+}
+
+export async function getSingleMovSho(id) {
+  const response = await client
+    .from('mov_sho_inventory')
+    .select()
+    .match({ id })
+    .single();
   return checkError(response);
 }
